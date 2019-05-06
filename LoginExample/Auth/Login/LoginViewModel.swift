@@ -8,12 +8,19 @@
 
 import Foundation
 protocol LoginUI: class {
-    
 }
 class LoginViewModel {
-    private var state = LoginState()
+    private var state = LoginState() {
+        didSet {
+            
+        }
+    }
     private unowned let ui: LoginUI
     init(with ui: LoginUI) {
         self.ui = ui
     }
+    
+    func usernameFieldDidUpdate(_ username: String) {
+    }
+    
 }

@@ -12,12 +12,14 @@
 		2F801B0A2276405B00788781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F801B092276405B00788781 /* Assets.xcassets */; };
 		2F801B0D2276405B00788781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F801B0B2276405B00788781 /* LaunchScreen.storyboard */; };
 		2F801B182276405C00788781 /* LoginExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F801B172276405C00788781 /* LoginExampleTests.swift */; };
-		2F801B232276405C00788781 /* LoginExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F801B222276405C00788781 /* LoginExampleUITests.swift */; };
 		2F8020BD22764165001BA43A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020BC22764165001BA43A /* LandingViewController.swift */; };
 		2F8020BF22764278001BA43A /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020BE22764278001BA43A /* AuthFlowCoordinator.swift */; };
 		2F8020C42276472B001BA43A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020C32276472B001BA43A /* LoginViewController.swift */; };
+		2FC343D52279D49C001E87C3 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC343D42279D49C001E87C3 /* LoginTests.swift */; };
+		2FC343D62279D715001E87C3 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE21BC422764B0200B4B7CA /* LoginState.swift */; };
 		2FE21BC32276497400B4B7CA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE21BC22276497400B4B7CA /* LoginViewModel.swift */; };
 		2FE21BC522764B0200B4B7CA /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE21BC422764B0200B4B7CA /* LoginState.swift */; };
+		42A7CED5F6A60FC1D4F52737 /* Pods_LoginExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0B60DF49EFDA984EDB48C4 /* Pods_LoginExampleTests.framework */; };
 		72347D58CE1C6C6687D69C54 /* Pods_LoginExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B868F924FABC25F09F53EE /* Pods_LoginExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,16 +31,10 @@
 			remoteGlobalIDString = 2F801AFE2276405A00788781;
 			remoteInfo = LoginExample;
 		};
-		2F801B1F2276405C00788781 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2F801AF72276405A00788781 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2F801AFE2276405A00788781;
-			remoteInfo = LoginExample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0B60DF49EFDA984EDB48C4 /* Pods_LoginExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2595B7B23EC5A9639F9736CE /* Pods-LoginExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginExample.debug.xcconfig"; path = "Target Support Files/Pods-LoginExample/Pods-LoginExample.debug.xcconfig"; sourceTree = "<group>"; };
 		2F801AFF2276405A00788781 /* LoginExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F801B022276405A00788781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,16 +45,18 @@
 		2F801B132276405C00788781 /* LoginExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F801B172276405C00788781 /* LoginExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleTests.swift; sourceTree = "<group>"; };
 		2F801B192276405C00788781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F801B1E2276405C00788781 /* LoginExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F801B222276405C00788781 /* LoginExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleUITests.swift; sourceTree = "<group>"; };
 		2F801B242276405C00788781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F8020BC22764165001BA43A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		2F8020BE22764278001BA43A /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
 		2F8020C32276472B001BA43A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2FC343D42279D49C001E87C3 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		2FE21BC22276497400B4B7CA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2FE21BC422764B0200B4B7CA /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		3BD806C7D37A401C25147551 /* Pods-LoginExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginExample.release.xcconfig"; path = "Target Support Files/Pods-LoginExample/Pods-LoginExample.release.xcconfig"; sourceTree = "<group>"; };
+		86DB2333AFF804D5CDD96695 /* Pods-LoginExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginExampleTests.release.xcconfig"; path = "Target Support Files/Pods-LoginExampleTests/Pods-LoginExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		88B868F924FABC25F09F53EE /* Pods_LoginExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A628865CC4A568F70703826D /* Pods-LoginExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-LoginExampleTests/Pods-LoginExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2F801B1B2276405C00788781 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				42A7CED5F6A60FC1D4F52737 /* Pods_LoginExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				88B868F924FABC25F09F53EE /* Pods_LoginExample.framework */,
+				0F0B60DF49EFDA984EDB48C4 /* Pods_LoginExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,7 +105,6 @@
 			children = (
 				2F801AFF2276405A00788781 /* LoginExample.app */,
 				2F801B132276405C00788781 /* LoginExampleTests.xctest */,
-				2F801B1E2276405C00788781 /* LoginExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +126,7 @@
 			children = (
 				2F801B172276405C00788781 /* LoginExampleTests.swift */,
 				2F801B192276405C00788781 /* Info.plist */,
+				2FC343D42279D49C001E87C3 /* LoginTests.swift */,
 			);
 			path = LoginExampleTests;
 			sourceTree = "<group>";
@@ -181,6 +174,8 @@
 			children = (
 				2595B7B23EC5A9639F9736CE /* Pods-LoginExample.debug.xcconfig */,
 				3BD806C7D37A401C25147551 /* Pods-LoginExample.release.xcconfig */,
+				A628865CC4A568F70703826D /* Pods-LoginExampleTests.debug.xcconfig */,
+				86DB2333AFF804D5CDD96695 /* Pods-LoginExampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -210,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F801B2A2276405C00788781 /* Build configuration list for PBXNativeTarget "LoginExampleTests" */;
 			buildPhases = (
+				858B0F4EE2348B5D1A046EA9 /* [CP] Check Pods Manifest.lock */,
 				2F801B0F2276405C00788781 /* Sources */,
 				2F801B102276405C00788781 /* Frameworks */,
 				2F801B112276405C00788781 /* Resources */,
+				26217E1C3CA158A800B22C4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,24 +220,6 @@
 			productName = LoginExampleTests;
 			productReference = 2F801B132276405C00788781 /* LoginExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2F801B1D2276405C00788781 /* LoginExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2F801B2D2276405C00788781 /* Build configuration list for PBXNativeTarget "LoginExampleUITests" */;
-			buildPhases = (
-				2F801B1A2276405C00788781 /* Sources */,
-				2F801B1B2276405C00788781 /* Frameworks */,
-				2F801B1C2276405C00788781 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2F801B202276405C00788781 /* PBXTargetDependency */,
-			);
-			name = LoginExampleUITests;
-			productName = LoginExampleUITests;
-			productReference = 2F801B1E2276405C00788781 /* LoginExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -257,11 +236,6 @@
 					};
 					2F801B122276405C00788781 = {
 						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 2F801AFE2276405A00788781;
-					};
-					2F801B1D2276405C00788781 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 2F801AFE2276405A00788781;
 					};
 				};
 			};
@@ -280,7 +254,6 @@
 			targets = (
 				2F801AFE2276405A00788781 /* LoginExample */,
 				2F801B122276405C00788781 /* LoginExampleTests */,
-				2F801B1D2276405C00788781 /* LoginExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,16 +276,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F801B1C2276405C00788781 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26217E1C3CA158A800B22C4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoginExampleTests/Pods-LoginExampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoginExampleTests/Pods-LoginExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		858B0F4EE2348B5D1A046EA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoginExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D7F6F5A794B7CB2D5B5612CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,14 +368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F801B182276405C00788781 /* LoginExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2F801B1A2276405C00788781 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F801B232276405C00788781 /* LoginExampleUITests.swift in Sources */,
+				2FC343D62279D715001E87C3 /* LoginState.swift in Sources */,
+				2FC343D52279D49C001E87C3 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,11 +380,6 @@
 			isa = PBXTargetDependency;
 			target = 2F801AFE2276405A00788781 /* LoginExample */;
 			targetProxy = 2F801B142276405C00788781 /* PBXContainerItemProxy */;
-		};
-		2F801B202276405C00788781 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2F801AFE2276405A00788781 /* LoginExample */;
-			targetProxy = 2F801B1F2276405C00788781 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -556,9 +557,9 @@
 		};
 		2F801B2B2276405C00788781 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A628865CC4A568F70703826D /* Pods-LoginExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -570,15 +571,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginExample.app/LoginExample";
 			};
 			name = Debug;
 		};
 		2F801B2C2276405C00788781 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86DB2333AFF804D5CDD96695 /* Pods-LoginExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,45 +590,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginExample.app/LoginExample";
-			};
-			name = Release;
-		};
-		2F801B2E2276405C00788781 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LoginExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.13bit.LoginExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginExample;
-			};
-			name = Debug;
-		};
-		2F801B2F2276405C00788781 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LoginExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.13bit.LoginExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginExample;
 			};
 			name = Release;
 		};
@@ -658,15 +619,6 @@
 			buildConfigurations = (
 				2F801B2B2276405C00788781 /* Debug */,
 				2F801B2C2276405C00788781 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2F801B2D2276405C00788781 /* Build configuration list for PBXNativeTarget "LoginExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2F801B2E2276405C00788781 /* Debug */,
-				2F801B2F2276405C00788781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

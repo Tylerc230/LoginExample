@@ -8,44 +8,42 @@
 //
 import Foundation
 struct LoginState {
-    var usernameTextField = TextField()
-    mutating func textUpdated(current: String, proposed: String, range: NSRange) {
-        guard let textRange = Range(range, in: current) else {
+    enum ValidationState: Error {
+        case valid, invalidLength, invalidCharacters
+    }
+    mutating func set(username: String?) {
+        guard let username = username else {
             return
         }
-        usernameTextField.text = current
-        let potentialUsername = current.replacingCharacters(in: textRange, with: proposed)
-        do {
-            try validate(username: potentialUsername)
-        } catch let error as TextField.ValidationError {
-            usernameTextField.validationState = error
-        } catch {
-            
-        }
-        usernameTextField.text = potentialUsername
+        loginViewModel.username.validationState = validate(username: username)
+        loginViewModel.username.text = username
     }
     
-    private func validate(username: String) throws {
+    var loginViewModel = LoginViewModel()
+
+    struct LoginViewModel {
+        var username = TextField()
+        var password = TextField()
+        struct TextField {
+            var text = ""
+            var validationState: ValidationState = .valid
+        }
+    }
+
+}
+
+private extension LoginState {
+    func validate(username: String) -> ValidationState {
         let usernameLengthRange = (4...16)
         let invalidCharacters = CharacterSet(charactersIn: "!@#$%^&*()")
         guard usernameLengthRange.contains(username.count) else {
-            throw TextField.ValidationError.textLength
-//            ("User name must be between \(usernameLengthRange.lowerBound) and \(usernameLengthRange.upperBound)" )
+            return ValidationState.invalidLength
         }
         guard username.rangeOfCharacter(from: invalidCharacters) == nil else {
-            throw TextField.ValidationError.invalidCharacters
-//            ("Username must not contain \(invalidCharacters)")
+            return ValidationState.invalidCharacters
         }
+        return .valid
         
     }
     
-    struct TextField {
-        enum ValidationError: Error {
-            case textLength, invalidCharacters
-        }
-        var text: String = ""
-        var validationState: ValidationError?
-
-        
-    }
 }

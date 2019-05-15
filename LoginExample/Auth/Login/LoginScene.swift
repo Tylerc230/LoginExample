@@ -8,11 +8,12 @@
 
 import Foundation
 protocol LoginUI: class {
+    func update(with: LoginState.LoginViewModel)
 }
-class LoginViewModel {
+class LoginScene {
     private var state = LoginState() {
         didSet {
-            
+            self.ui.update(with: state.loginViewModel)
         }
     }
     private unowned let ui: LoginUI
@@ -20,7 +21,8 @@ class LoginViewModel {
         self.ui = ui
     }
     
-    func usernameFieldDidUpdate(_ username: String) {
+    func usernameFieldDidUpdate(_ username: String?) {
+        state.set(username: username)
     }
     
 }

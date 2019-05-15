@@ -14,26 +14,23 @@ class LoginSpec: QuickSpec {
             context("input validation") {
                 var login = LoginState()
                 it("updates with valid new text") {
-                    login.textUpdated(current: "", proposed: "myUser", range: NSRange(location: 0, length: 0))
-                    expect(login.usernameTextField.validationState).to(beNil())
-                    expect(login.usernameTextField.text) == "myUser"
-                }
-                
-                it("updates existing text with new text") {
-                    login.textUpdated(current: "my", proposed: "User", range: NSRange(location: 2, length: 0))
-                    expect(login.usernameTextField.validationState).to(beNil())
-                    expect(login.usernameTextField.text) == "myUser"
+                    login.set(username: "myUser")
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.username.validationState) == .valid
+                    expect(viewModel.username.text) == "myUser"
                 }
                 
                 it("contains length validation error") {
-                    login.textUpdated(current: "", proposed: "my", range: NSRange(location: 0, length: 0))
-                    expect(login.usernameTextField.validationState) == .textLength
+                    login.set(username: "my")
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.username.validationState) == .invalidLength
                     
                 }
                 
                 it("contains invalide character error") {
-                    login.textUpdated(current: "my", proposed: "sk$" , range: NSRange(location: 2, length: 0))
-                    expect(login.usernameTextField.validationState) == .invalidCharacters
+                    login.set(username: "mysk$")
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.username.validationState) == .invalidCharacters
                 }
             }
         }

@@ -13,22 +13,27 @@ class LoginSpec: QuickSpec {
         describe("the login state") {
             var login = LoginState()
             context("input validation") {
+                it("is empty state on nil") {
+                    login.username = nil
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.username.validationState) == .empty
+                }
                 it("updates with valid new text") {
-                    login.set(username: "myUser")
+                    login.username = "myUser"
                     let viewModel = login.loginViewModel
                     expect(viewModel.username.validationState) == .valid
                     expect(viewModel.username.text) == "myUser"
                 }
                 
                 it("contains length validation error") {
-                    login.set(username: "my")
+                    login.username = "my"
                     let viewModel = login.loginViewModel
                     expect(viewModel.username.validationState) == .invalidLength
                     
                 }
                 
-                it("contains invalide character error") {
-                    login.set(username: "mysk$")
+                it("contains invalid character error") {
+                    login.username = "mysk$"
                     let viewModel = login.loginViewModel
                     expect(viewModel.username.validationState) == .invalidCharacters
                 }
@@ -40,10 +45,16 @@ class LoginSpec: QuickSpec {
                 }
                 
                 it("is enabled with valid input") {
-                    login.set(username: "tylerc")
-                    login.set(password: "hello")
+                    login.username = "tylerc"
+                    login.password = "hello"
                     let viewModel = login.loginViewModel
                     expect(viewModel.loginButtonEnabled).to(beTrue())
+                }
+                
+                it("is disabled with invalid input") {
+                    login.username = "ty"
+                    login.password = ""
+                    expect(login.loginViewModel.loginButtonEnabled).to(beFalse())
                 }
             }
         }

@@ -11,7 +11,6 @@
 		2F801B082276405A00788781 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F801B062276405A00788781 /* Auth.storyboard */; };
 		2F801B0A2276405B00788781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F801B092276405B00788781 /* Assets.xcassets */; };
 		2F801B0D2276405B00788781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F801B0B2276405B00788781 /* LaunchScreen.storyboard */; };
-		2F801B182276405C00788781 /* LoginExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F801B172276405C00788781 /* LoginExampleTests.swift */; };
 		2F8020BD22764165001BA43A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020BC22764165001BA43A /* LandingViewController.swift */; };
 		2F8020BF22764278001BA43A /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020BE22764278001BA43A /* AuthFlowCoordinator.swift */; };
 		2F8020C42276472B001BA43A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8020C32276472B001BA43A /* LoginViewController.swift */; };
@@ -43,7 +42,6 @@
 		2F801B0C2276405B00788781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F801B0E2276405B00788781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F801B132276405C00788781 /* LoginExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F801B172276405C00788781 /* LoginExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleTests.swift; sourceTree = "<group>"; };
 		2F801B192276405C00788781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F801B222276405C00788781 /* LoginExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleUITests.swift; sourceTree = "<group>"; };
 		2F801B242276405C00788781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		2F801B162276405C00788781 /* LoginExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F801B172276405C00788781 /* LoginExampleTests.swift */,
 				2F801B192276405C00788781 /* Info.plist */,
 				2FC343D42279D49C001E87C3 /* LoginTests.swift */,
 			);
@@ -367,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F801B182276405C00788781 /* LoginExampleTests.swift in Sources */,
 				2FC343D62279D715001E87C3 /* LoginState.swift in Sources */,
 				2FC343D52279D49C001E87C3 /* LoginTests.swift in Sources */,
 			);

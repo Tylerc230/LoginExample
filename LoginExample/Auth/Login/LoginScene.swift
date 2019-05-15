@@ -26,11 +26,11 @@ class LoginScene {
     }
     
     func usernameFieldDidUpdate(_ username: String?) {
-        state.set(username: username)
+        state.username = username
     }
     
     func passwordFieldDidUpdate(_ password: String?) {
-        state.set(password: password)
+        state.password = password
     }
     
     func donePressed() {
@@ -45,6 +45,11 @@ private extension LoginScene {
     }
     
     func handle(action: LoginState.Action) {
-        
+        switch action {
+        case .none:
+            break
+        case let .attemptLogin(username, password):
+            break
+        }
     }
 }

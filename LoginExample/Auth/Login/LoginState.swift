@@ -12,41 +12,35 @@ struct LoginState {
         case none, attemptLogin(username: String, password: String)
     }
     enum ValidationState: Error {
-        case valid, invalidLength, invalidCharacters
-    }
-    mutating func set(username: String?) {
-        guard let username = username else {
-            return
+        case empty, valid, invalidLength, invalidCharacters
+        var isError: Bool {
+            return self != .empty && self != .valid
         }
-        loginViewModel.username = usernameTextField(for: username)
     }
-    
-    mutating func set(password: String?) {
-        guard let password = password else {
-            return
-        }
-        loginViewModel.password = passwordTextField(for: password)
-    }
-    
     func actionOnDone() -> Action {
-        guard loginViewModel.loginButtonEnabled else {
+        //todo start loading spinners here
+        guard bothFieldsComplete else {
             return .none
         }
         return .attemptLogin(username: loginViewModel.username.text, password: loginViewModel.password.text)
     }
     
-    var loginViewModel = LoginViewModel()
+    var loginViewModel: LoginViewModel {
+        var viewModel = LoginViewModel()
+        viewModel.username = usernameTextField(for: username)
+        viewModel.password = passwordTextField(for: password)
+        viewModel.loginButtonEnabled = bothFieldsComplete
+        return viewModel
+    }
+    
+    var username: String?
+    var password: String?
 
     struct LoginViewModel {
         var username = TextField()
         var password = TextField()
-        var loginButtonEnabled: Bool {
-            return username.text != "" &&
-                username.validationState == .valid &&
-                password.text != "" &&
-                password.validationState == .valid
-        }
-        
+        var loginButtonEnabled = false
+
         struct TextField {
             init(text: String = "", validationState: ValidationState = .valid) {
                 self.text = text
@@ -60,23 +54,32 @@ struct LoginState {
 }
 
 private extension LoginState {
-    func usernameTextField(for username: String) -> LoginViewModel.TextField {
+    func usernameTextField(for username: String?) -> LoginViewModel.TextField {
         let validation = validate(username: username)
-        return LoginViewModel.TextField(text: username, validationState: validation)
+        return LoginViewModel.TextField(text: username ?? "", validationState: validation)
     }
     
-    func passwordTextField(for password: String) -> LoginViewModel.TextField {
-        return LoginViewModel.TextField(text: password, validationState: .valid)
+    func passwordTextField(for password: String?) -> LoginViewModel.TextField {
+        return LoginViewModel.TextField(text: password ?? "", validationState: .valid)
     }
     
-    func validate(username: String) -> ValidationState {
+    var bothFieldsComplete: Bool {
+        return username != "" &&
+            validate(username: username) == .valid &&
+            password != ""
+    }
+    
+    func validate(username: String?) -> ValidationState {
+        guard let username = username, username != "" else {
+            return .empty
+        }
         let usernameLengthRange = (4...16)
         let invalidCharacters = CharacterSet(charactersIn: "!@#$%^&*()")
         guard usernameLengthRange.contains(username.count) else {
-            return ValidationState.invalidLength
+            return .invalidLength
         }
         guard username.rangeOfCharacter(from: invalidCharacters) == nil else {
-            return ValidationState.invalidCharacters
+            return .invalidCharacters
         }
         return .valid
         

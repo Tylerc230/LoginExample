@@ -29,15 +29,14 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped() {
         scene?.donePressed()
     }
-    
 }
 
 private extension LoginViewController {
     func colorFor(validation: LoginState.ValidationState) -> CGColor {
-        if validation == .valid {
-            return UIColor.clear.cgColor
-        } else {
+        if validation.isError {
             return UIColor.red.cgColor
+        } else {
+            return UIColor.clear.cgColor
         }
     }
 }

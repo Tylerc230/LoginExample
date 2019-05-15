@@ -35,10 +35,16 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="passwordDidChange" destination="4Pm-tQ-EUl" eventType="editingChanged" id="L94-pr-V5e"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQT-Pt-g6p">
                                         <rect key="frame" x="0.0" y="170" width="200" height="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped" destination="4Pm-tQ-EUl" eventType="touchUpInside" id="UDm-Vf-vuB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -61,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1n-22-TUl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="-341"/>
+            <point key="canvasLocation" x="917" y="646"/>
         </scene>
         <!--Landing View Controller-->
         <scene sceneID="tne-QT-ifu">

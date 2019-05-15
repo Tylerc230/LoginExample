@@ -23,7 +23,7 @@ class AuthFlowCoordinator {
     private var loginView: LoginViewController {
         let loginView = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
         let loginViewModel = LoginScene(with: loginView)
-        loginView.viewModel = loginViewModel
+        loginView.scene = loginViewModel
         return loginView
     }
     

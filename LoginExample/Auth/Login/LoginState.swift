@@ -8,6 +8,9 @@
 //
 import Foundation
 struct LoginState {
+    enum Action {
+        case none, attemptLogin(username: String, password: String)
+    }
     enum ValidationState: Error {
         case valid, invalidLength, invalidCharacters
     }
@@ -15,8 +18,21 @@ struct LoginState {
         guard let username = username else {
             return
         }
-        loginViewModel.username.validationState = validate(username: username)
-        loginViewModel.username.text = username
+        loginViewModel.username = usernameTextField(for: username)
+    }
+    
+    mutating func set(password: String?) {
+        guard let password = password else {
+            return
+        }
+        loginViewModel.password = passwordTextField(for: password)
+    }
+    
+    func actionOnDone() -> Action {
+        guard loginViewModel.loginButtonEnabled else {
+            return .none
+        }
+        return .attemptLogin(username: loginViewModel.username.text, password: loginViewModel.password.text)
     }
     
     var loginViewModel = LoginViewModel()
@@ -24,15 +40,35 @@ struct LoginState {
     struct LoginViewModel {
         var username = TextField()
         var password = TextField()
+        var loginButtonEnabled: Bool {
+            return username.text != "" &&
+                username.validationState == .valid &&
+                password.text != "" &&
+                password.validationState == .valid
+        }
+        
         struct TextField {
-            var text = ""
-            var validationState: ValidationState = .valid
+            init(text: String = "", validationState: ValidationState = .valid) {
+                self.text = text
+                self.validationState = validationState
+            }
+            let text: String
+            let validationState: ValidationState
         }
     }
 
 }
 
 private extension LoginState {
+    func usernameTextField(for username: String) -> LoginViewModel.TextField {
+        let validation = validate(username: username)
+        return LoginViewModel.TextField(text: username, validationState: validation)
+    }
+    
+    func passwordTextField(for password: String) -> LoginViewModel.TextField {
+        return LoginViewModel.TextField(text: password, validationState: .valid)
+    }
+    
     func validate(username: String) -> ValidationState {
         let usernameLengthRange = (4...16)
         let invalidCharacters = CharacterSet(charactersIn: "!@#$%^&*()")

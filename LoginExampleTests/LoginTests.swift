@@ -10,9 +10,9 @@ import Quick
 import Nimble
 class LoginSpec: QuickSpec {
     override func spec() {
-        describe("the login logic") {
+        describe("the login state") {
+            var login = LoginState()
             context("input validation") {
-                var login = LoginState()
                 it("updates with valid new text") {
                     login.set(username: "myUser")
                     let viewModel = login.loginViewModel
@@ -31,6 +31,19 @@ class LoginSpec: QuickSpec {
                     login.set(username: "mysk$")
                     let viewModel = login.loginViewModel
                     expect(viewModel.username.validationState) == .invalidCharacters
+                }
+            }
+            context("login button") {
+                it("is disabled initially") {
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.loginButtonEnabled).to(beFalse())
+                }
+                
+                it("is enabled with valid input") {
+                    login.set(username: "tylerc")
+                    login.set(password: "hello")
+                    let viewModel = login.loginViewModel
+                    expect(viewModel.loginButtonEnabled).to(beTrue())
                 }
             }
         }

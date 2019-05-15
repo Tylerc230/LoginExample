@@ -13,7 +13,7 @@ protocol LoginUI: class {
 class LoginScene {
     private var state = LoginState() {
         didSet {
-            self.ui.update(with: state.loginViewModel)
+            updateUI()
         }
     }
     private unowned let ui: LoginUI
@@ -21,8 +21,30 @@ class LoginScene {
         self.ui = ui
     }
     
+    func viewLoaded() {
+        updateUI()
+    }
+    
     func usernameFieldDidUpdate(_ username: String?) {
         state.set(username: username)
     }
     
+    func passwordFieldDidUpdate(_ password: String?) {
+        state.set(password: password)
+    }
+    
+    func donePressed() {
+        let action = state.actionOnDone()
+        handle(action: action)
+    }
+}
+
+private extension LoginScene {
+    func updateUI() {
+        ui.update(with: state.loginViewModel)
+    }
+    
+    func handle(action: LoginState.Action) {
+        
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet var usernameField: UITextField!
+    @IBOutlet private var usernameError: UILabel!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var loginButton: UIButton!
     var scene: LoginScene?
@@ -48,5 +49,17 @@ extension LoginViewController: LoginUI {
         passwordField.text = viewModel.password.text
         loginButton.isEnabled = viewModel.loginButtonEnabled
         usernameField.layer.borderColor = colorFor(validation: viewModel.username.validationState)
+        usernameError.text = viewModel.username.validationState.displayText
+    }
+}
+
+private extension LoginState.ValidationState {
+    var displayText: String {
+        switch self {
+        case .empty: return "Cannot be empty"
+        case .invalidCharacters: return "Contains invalid characters"
+        case .invalidLength: return "Invalid length"
+        case .valid: return ""
+        }
     }
 }
